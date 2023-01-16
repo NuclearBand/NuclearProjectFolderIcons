@@ -1,10 +1,10 @@
-# UnityProjectFolderIcons
+# NuclearProjectFolderIcons
 
 ![image](https://user-images.githubusercontent.com/68797964/132967661-a6aff48e-4605-417f-8f4c-367d9172ed0f.png)
 
 ## Features
 
-**UnityProjectFolderIcons** enables you to customize the icon of your folders in the Unity project browser.
+**NuclearProjectFolderIcons** enables you to customize the icon of your folders in the Unity project browser.
 
 ### Folder List
 
@@ -33,7 +33,7 @@ You can configure the aliases in Edit -> Preferences -> Project folder icons
 
 ## Install
 
-- Input 'https://github.com/NuclearBand/UnityProjectFolderIcons.git' in 'Add package from git URL'
+- Input 'https://github.com/NuclearBand/NuclearProjectFolderIcons.git' in 'Add package from git URL'
 
 ## License
 

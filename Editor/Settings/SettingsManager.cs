@@ -1,27 +1,38 @@
 ﻿#nullable enable
 using System.Collections.Generic;
-using UnityEditor;
 
-namespace NuclearBand.UnityProjectFolderIcons
+namespace Nuclear.ProjectFolderIcons
 {
     internal static class SettingsManager
     {
-        private const string PackageName = "com.nuclearband.unityprojectfoldericons";
-        internal const string IconsPath = "IconsList";
+        public const string PackageName = "com.nuclearband.projectfoldericons";
+        private const string IconsPath = "IconsList";
 
         private static UnityEditor.SettingsManagement.Settings? _instance;
 
+        private static List<IconSetting>? _iconsList;
+
         internal static UnityEditor.SettingsManagement.Settings Instance => 
-            _instance ??= new UnityEditor.SettingsManagement.Settings(PackageName);
+            _instance ??= new(PackageName);
 
         public static void Save()
         {
+            Instance.Set(IconsPath, _iconsList);
             Instance.Save();
         }
 
-        public static List<Settings.IconSetting> GetIconSettings()
+        public static List<IconSetting> GetIconSettings()
         {
-            return Instance.Get(IconsPath, SettingsScope.Project, Settings.DefaultIconList);
+            if (_iconsList != null)
+                return _iconsList;
+            
+            _iconsList = Instance.Get<List<IconSetting>>(IconsPath);
+            if (_iconsList == null)
+            {
+                _iconsList = DefaultIcons.List;
+                Save();
+            }
+            return _iconsList;
         }
     }
 }
