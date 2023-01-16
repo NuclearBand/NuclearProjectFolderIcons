@@ -29,7 +29,7 @@ If the following names are included in the folder name, change the icon for that
 
 ### Settings
 
-You can configure the aliases in Edit -> Preferences -> Project folder icons
+You can configure the aliases in Edit -> Preferences -> Nuclear Project Folder Icons
 
 ## Install
 
