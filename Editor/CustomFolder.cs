@@ -20,7 +20,7 @@ namespace Nuclear.ProjectFolderIcons
         {
             var path = AssetDatabase.GUIDToAssetPath(guid);
 
-            if (path == "" ||
+            if (string.IsNullOrWhiteSpace(path) || !Directory.Exists(path) ||
                 Event.current.type != EventType.Repaint ||
                 !File.GetAttributes(path).HasFlag(FileAttributes.Directory))
             {
